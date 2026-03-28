@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Golfie — Play. Share. Rise.</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛳</text></svg>">
+  <style>
+    :root {
+      --primary: #2D5A27;
+      --primary-light: #E8F5E9;
+      --bg: #FAFAFA;
+      --text: #212121;
+      --text-secondary: #616161;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --primary: #81C784;
+        --primary-light: #1B3A1A;
+        --bg: #121212;
+        --text: #E0E0E0;
+        --text-secondary: #9E9E9E;
+      }
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Kaku Gothic ProN', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .logo { font-size: 64px; margin-bottom: 16px; }
+    h1 { font-size: 36px; font-weight: 800; color: var(--primary); margin-bottom: 8px; }
+    .tagline { font-size: 18px; color: var(--text-secondary); margin-bottom: 48px; letter-spacing: 2px; }
+    .coming-soon {
+      font-size: 14px;
+      color: var(--text-secondary);
+      background: var(--primary-light);
+      padding: 12px 32px;
+      border-radius: 24px;
+      margin-bottom: 48px;
+    }
+    .links { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
+    .links a {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 8px 16px;
+      border: 1px solid var(--primary);
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+    .links a:hover { background: var(--primary); color: white; }
+    .footer {
+      position: fixed;
+      bottom: 20px;
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+  </style>
+</head>
+<body>
+  <div class="logo">⛳</div>
+  <h1>Golfie</h1>
+  <p class="tagline">Play. Share. Rise.</p>
+  <p class="coming-soon">Coming Soon — April 2026</p>
+  <div class="links">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+  </div>
+  <div class="footer">&copy; 2026 Golfie</div>
+</body>
+</html>
