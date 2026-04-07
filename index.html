@@ -214,7 +214,8 @@
     .sc:nth-child(3) .sc-i{background:#FF9800}
     .sc:nth-child(4) .sc-i{background:#9C27B0}
     .sc h3{font-size:14px;font-weight:700;margin-bottom:6px}
-    .sc .sc-brief{font-size:12px;color:var(--text-sub);line-height:1.6;transition:opacity .3s}
+    .sc .sc-brief{font-size:12px;color:var(--text-sub);line-height:1.6;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;transition:all .3s}
+    .sc.active .sc-brief{-webkit-line-clamp:unset;overflow:visible}
     /* Detail panel (hidden by default, shown on hover/tap) */
     .sc-detail{max-height:0;overflow:hidden;transition:max-height .4s ease,opacity .3s ease,margin .3s ease;opacity:0;margin-top:0}
     .sc:hover .sc-detail,.sc.active .sc-detail{max-height:300px;opacity:1;margin-top:12px}
@@ -567,10 +568,10 @@
     <!-- Sub: Feed / Kudos / Ranking / ID (interactive) -->
     <div class="soc-sub">
       <!-- Feed -->
-      <div class="sc" onclick="this.classList.toggle('active')">
+      <div class="sc" onclick="tSc(this)">
         <div class="sc-i">F</div>
         <h3>Feed</h3>
-        <p class="sc-brief"><span class="lj a">仲間の"かたち"が集まる場所。</span><span class="le">Where your crew's shapes gather.</span><span class="lk">동료의 '형태'가 모이는 곳.</span></p>
+        <p class="sc-brief"><span class="lj a">仲間の"かたち"が集まる場所。写真やコメントも添えて…</span><span class="le">Where your crew's shapes gather. Add photos, comments…</span><span class="lk">동료의 '형태'가 모이는 곳. 사진과 코멘트도…</span></p>
         <div class="sc-detail">
           <div class="sc-detail-inner">
             <p><span class="lj a">ラウンド後にアプリを開くと、<br class="sp">仲間の今日のグリッドが並んでいる。<br class="sp">写真やコメントも添えて、<br class="sp">ゴルフの1日を仲間と共有できる。</span><span class="le">Open the app after your round and see your friends' grids waiting. Add photos and comments to share your golf day.</span><span class="lk">라운드 후 앱을 열면 친구들의 그리드가 기다리고 있다. 사진과 코멘트를 더해 골프의 하루를 공유.</span></p>
@@ -579,10 +580,10 @@
         </div>
       </div>
       <!-- Kudos -->
-      <div class="sc" onclick="this.classList.toggle('active')">
+      <div class="sc" onclick="tSc(this)">
         <div class="sc-i">K</div>
         <h3>Kudos</h3>
-        <p class="sc-brief"><span class="lj a">いいね以上の称賛を。</span><span class="le">More than a like.</span><span class="lk">좋아요 이상의 칭찬.</span></p>
+        <p class="sc-brief"><span class="lj a">いいね以上の称賛を。ゴルファーならではの…</span><span class="le">More than a like. Golfer-specific respect…</span><span class="lk">좋아요 이상의 칭찬. 골퍼만의…</span></p>
         <div class="sc-detail">
           <div class="sc-detail-inner">
             <p><span class="lj a">6種類のKudosで<br class="sp">仲間のプレーを称えよう。<br class="sp">「いいね」では伝えきれない、<br class="sp">ゴルファーならではのリスペクトを。</span><span class="le">Celebrate with 6 types of Kudos. Express respect that a simple "like" can't capture.</span><span class="lk">6종류의 Kudos로 동료의 플레이를 칭찬하자. '좋아요'로는 부족한 리스펙트를.</span></p>
@@ -595,10 +596,10 @@
         </div>
       </div>
       <!-- Ranking -->
-      <div class="sc" onclick="this.classList.toggle('active')">
+      <div class="sc" onclick="tSc(this)">
         <div class="sc-i">R</div>
         <h3>Ranking</h3>
-        <p class="sc-brief"><span class="lj a">仲間の中で、今どこにいる？</span><span class="le">Where do you stand?</span><span class="lk">지금 어디에?</span></p>
+        <p class="sc-brief"><span class="lj a">仲間の中で、今どこにいる？ランクが上がると…</span><span class="le">Where do you stand? Earn rank badges…</span><span class="lk">지금 어디에? 랭크가 오르면…</span></p>
         <div class="sc-detail">
           <div class="sc-detail-inner">
             <p><span class="lj a">フレンズランキングで<br class="sp">仲間内の順位を確認。<br class="sp">自己成長ビューで自分の軌跡も振り返れる。<br class="sp">ランクが上がるとバッジが進化。</span><span class="le">Check your position among friends. Track your growth. Earn evolving rank badges.</span><span class="lk">프렌즈 랭킹에서 순위 확인. 성장 뷰에서 궤적도 돌아보자. 랭크가 오르면 배지가 진화.</span></p>
@@ -616,10 +617,10 @@
         </div>
       </div>
       <!-- ROUNDIE ID -->
-      <div class="sc" onclick="this.classList.toggle('active')">
+      <div class="sc" onclick="tSc(this)">
         <div class="sc-i">ID</div>
         <h3>ROUNDIE ID</h3>
-        <p class="sc-brief"><span class="lj a">あなただけのゴルフカード。</span><span class="le">Your personal golf card.</span><span class="lk">나만의 골프 카드.</span></p>
+        <p class="sc-brief"><span class="lj a">あなただけのゴルフカード。SNSでシェアすれば…</span><span class="le">Your personal golf card. Share on social…</span><span class="lk">나만의 골프 카드. SNS에서 공유하면…</span></p>
         <div class="sc-detail">
           <div class="sc-detail-inner">
             <p><span class="lj a">ランク、ROUNDIE Score、<br class="sp">ラウンド履歴がひとつに。<br class="sp">見せたくなる洗練されたデザイン。<br class="sp">SNSでシェアすれば、あなたのゴルフIDに。</span><span class="le">Rank, ROUNDIE Score, round history — all in one card. A design you'll want to share. Your golf identity on social.</span><span class="lk">랭크, ROUNDIE Score, 라운드 기록이 하나로. 보여주고 싶은 디자인. SNS에서 공유하면 나의 골프 ID로.</span></p>
@@ -852,6 +853,7 @@ document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
 const dg=document.getElementById('dG');
 new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){dg.classList.add('an');dg.querySelectorAll('.gc').forEach((c,i)=>{c.style.transitionDelay=(i*50)+'ms'})}})},{threshold:.3}).observe(dg);
 function tF(b){const i=b.parentElement;const o=i.classList.contains('open');document.querySelectorAll('.faq-i').forEach(x=>x.classList.remove('open'));if(!o)i.classList.add('open')}
+function tSc(el){const wasActive=el.classList.contains('active');document.querySelectorAll('.sc').forEach(x=>x.classList.remove('active'));if(!wasActive)el.classList.add('active')}
 function sl(l){['ja','en','ko'].forEach(x=>{const s=x==='ja'?'lj':x==='en'?'le':'lk';const si=x==='ja'?'ilj':x==='en'?'ile':'ilk';document.querySelectorAll(`.${s},.${si}`).forEach(e=>{e.classList.toggle('a',x===l)})});document.querySelectorAll('.nav-r a').forEach(a=>a.classList.remove('active'));event.target.classList.add('active');document.documentElement.lang=l}
 </script>
 </body>
