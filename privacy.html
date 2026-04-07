@@ -174,10 +174,15 @@
   <tr><td>ゴルフレベル</td><td>プロフィール設定時</td><td>ランキング・マッチング</td><td>任意</td></tr>
   <tr><td>目標スコア</td><td>プロフィール設定時</td><td>成長トラッキング</td><td>任意</td></tr>
   <tr><td>ゴルフスコア（ホール別）</td><td>ラウンド記録時</td><td>スコア管理、Wordleグリッド生成、ROUNDIE Score算出</td><td>機能利用時必須</td></tr>
-  <tr><td>ゴルフコース名</td><td>ラウンド記録時</td><td>ラウンド記録の紐付け</td><td>機能利用時必須</td></tr>
-  <tr><td>写真</td><td>アップロード時</td><td>ラウンド記録への添付、フィード表示</td><td>任意</td></tr>
+  <tr><td>ホール別詳細（パット数、FW的中、GIR、使用クラブ、ショット方向、ペナルティ、バンカーセーブ、パット距離、メモ）</td><td>ラウンド記録時</td><td>統計分析、ROUNDIE Score算出</td><td>任意</td></tr>
+  <tr><td>ゴルフコース名・コースレーティング・スロープレーティング</td><td>ラウンド記録時</td><td>ラウンド記録の紐付け、ハンディキャップ算出</td><td>コース名は必須、他は任意</td></tr>
+  <tr><td>天気</td><td>ラウンド記録時</td><td>ラウンド記録の付加情報</td><td>任意</td></tr>
+  <tr><td>同伴者名</td><td>ラウンド記録時</td><td>ラウンド記録の付加情報、フィード表示</td><td>任意</td></tr>
+  <tr><td>ティーボックス</td><td>ラウンド記録時</td><td>ハンディキャップ算出</td><td>任意</td></tr>
+  <tr><td>写真（最大3枚）</td><td>アップロード時</td><td>ラウンド記録への添付、フィード表示</td><td>任意</td></tr>
   <tr><td>コメント</td><td>投稿時</td><td>ソーシャル機能</td><td>任意</td></tr>
-  <tr><td>コンペ情報</td><td>コンペ作成時</td><td>コンペ管理・結果集計</td><td>機能利用時必須</td></tr>
+  <tr><td>Kudos（6種類: ナイスリカバリー、グリーンマスター、ナイスフォーム、ベストバディ、スタイルキング、スマートプレー）</td><td>フィードでの送信時</td><td>ソーシャル機能</td><td>任意</td></tr>
+  <tr><td>コンペ情報（スコアリング方式: ストローク/新ペリア/ダブルペリア）</td><td>コンペ作成時</td><td>コンペ管理・結果集計</td><td>機能利用時必須</td></tr>
   <tr><td>メールアドレス（リリース通知）</td><td>Webサイトからの通知希望時</td><td>アプリリリース時のお知らせ送付のみ。第三者への提供は行いません</td><td>任意</td></tr>
 </table>
 
@@ -202,7 +207,7 @@
 </ul>
 
 <h2>2. ROUNDIE Scoreについて</h2>
-<p>本アプリは、ユーザーのゴルフ体験を独自のスコアリングシステム「ROUNDIE Score」で評価します。PLAY（プレー品質）、VIBE（コミュニティ参加度）、STYLE（体験の多様性）の3軸で構成される当社独自の指標です。ROUNDIE Scoreはランキングやプロフィールに表示されますが、実際のゴルフスコア（数値）はデフォルトではフォロワーのみに表示されます。公開範囲はユーザーが選択できます。</p>
+<p>本アプリは、ユーザーのゴルフ体験を独自のスコアリングシステム「ROUNDIE Score」で評価します。SKILL（スコア実力）、VIBE（ゴルフ熱量）、STYLE（ゴルフライフ）、SCORE（スコア平均）の4軸で構成される当社独自の指標です。ROUNDIE Scoreはランキングやプロフィールに表示されますが、実際のゴルフスコア（数値）はデフォルトではフォロワーのみに表示されます。公開範囲はユーザーが選択できます。</p>
 
 <h2>3. プライバシー設定</h2>
 <table>
@@ -344,10 +349,15 @@
   <tr><td>ROUNDIE ID</td><td>Profile setup</td><td>Unique identifier</td><td>Required</td></tr>
   <tr><td>Golf level</td><td>Profile setup</td><td>Ranking, matching</td><td>Optional</td></tr>
   <tr><td>Golf scores (hole-by-hole)</td><td>Round recording</td><td>Score management, grid generation, ROUNDIE Score</td><td>Required for feature</td></tr>
-  <tr><td>Golf course name</td><td>Round recording</td><td>Round record linking</td><td>Required for feature</td></tr>
-  <tr><td>Photos</td><td>User upload</td><td>Round attachment, feed display</td><td>Optional</td></tr>
+  <tr><td>Per-hole details (putts, fairway hit, GIR, club used, shot direction, penalties, bunker saves, putt distance, memo)</td><td>Round recording</td><td>Statistics, ROUNDIE Score calculation</td><td>Optional</td></tr>
+  <tr><td>Course name, course rating, slope rating</td><td>Round recording</td><td>Round record linking, handicap calculation</td><td>Course name required; others optional</td></tr>
+  <tr><td>Weather conditions</td><td>Round recording</td><td>Round context</td><td>Optional</td></tr>
+  <tr><td>Playing companions' names</td><td>Round recording</td><td>Round context, feed display</td><td>Optional</td></tr>
+  <tr><td>Tee box selection</td><td>Round recording</td><td>Handicap calculation</td><td>Optional</td></tr>
+  <tr><td>Photos (up to 3)</td><td>User upload</td><td>Round attachment, feed display</td><td>Optional</td></tr>
   <tr><td>Comments</td><td>Posting</td><td>Social features</td><td>Optional</td></tr>
-  <tr><td>Competition info</td><td>Competition creation</td><td>Competition management</td><td>Required for feature</td></tr>
+  <tr><td>Kudos (6 types: Nice Recovery, Green Master, Nice Form, Best Buddy, Style King, Smart Play)</td><td>Feed interaction</td><td>Social features</td><td>Optional</td></tr>
+  <tr><td>Competition info (scoring: Stroke / New Peoria / Double Peoria)</td><td>Competition creation</td><td>Competition management</td><td>Required for feature</td></tr>
   <tr><td>Email (launch notification)</td><td>Website notification signup</td><td>App launch notification only. Not shared with third parties</td><td>Optional</td></tr>
 </table>
 
@@ -371,7 +381,7 @@
 </ul>
 
 <h2>2. About ROUNDIE Score</h2>
-<p>The App evaluates your golf experience using "ROUNDIE Score" — a proprietary metric with three dimensions: PLAY (play quality), VIBE (community participation), and STYLE (experience diversity). ROUNDIE Score appears on rankings and profiles, but your actual golf score numbers are visible only to followers by default. You control who can see them.</p>
+<p>The App evaluates your golf experience using "ROUNDIE Score" — a proprietary metric with four dimensions: SKILL (scoring ability), VIBE (golf passion), STYLE (golf lifestyle), and SCORE (scoring average). ROUNDIE Score appears on rankings and profiles, but your actual golf score numbers are visible only to followers by default. You control who can see them.</p>
 
 <h2>3. Privacy Settings</h2>
 <table>
@@ -485,10 +495,15 @@
   <tr><td>ROUNDIE ID</td><td>프로필 설정 시</td><td>고유 식별자</td><td>필수</td></tr>
   <tr><td>골프 레벨</td><td>프로필 설정 시</td><td>랭킹, 매칭</td><td>선택</td></tr>
   <tr><td>골프 스코어 (홀별)</td><td>라운드 기록 시</td><td>스코어 관리, 그리드 생성, ROUNDIE Score</td><td>기능 이용 시 필수</td></tr>
-  <tr><td>골프 코스명</td><td>라운드 기록 시</td><td>기록 연결</td><td>기능 이용 시 필수</td></tr>
-  <tr><td>사진</td><td>업로드 시</td><td>기록 첨부, 피드 표시</td><td>선택</td></tr>
+  <tr><td>홀별 상세 (퍼트, FW 적중, GIR, 사용 클럽, 샷 방향, 페널티, 벙커 세이브, 퍼트 거리, 메모)</td><td>라운드 기록 시</td><td>통계, ROUNDIE Score 산출</td><td>선택</td></tr>
+  <tr><td>코스명, 코스 레이팅, 슬로프 레이팅</td><td>라운드 기록 시</td><td>기록 연결, 핸디캡 산출</td><td>코스명 필수, 기타 선택</td></tr>
+  <tr><td>날씨</td><td>라운드 기록 시</td><td>기록 부가 정보</td><td>선택</td></tr>
+  <tr><td>동반자 이름</td><td>라운드 기록 시</td><td>기록 부가 정보, 피드 표시</td><td>선택</td></tr>
+  <tr><td>티박스</td><td>라운드 기록 시</td><td>핸디캡 산출</td><td>선택</td></tr>
+  <tr><td>사진 (최대 3장)</td><td>업로드 시</td><td>기록 첨부, 피드 표시</td><td>선택</td></tr>
   <tr><td>댓글</td><td>작성 시</td><td>소셜 기능</td><td>선택</td></tr>
-  <tr><td>대회 정보</td><td>대회 생성 시</td><td>대회 관리, 채점</td><td>기능 이용 시 필수</td></tr>
+  <tr><td>Kudos (6종: 나이스 리커버리, 그린 마스터, 나이스 폼, 베스트 버디, 스타일 킹, 스마트 플레이)</td><td>피드 상호작용 시</td><td>소셜 기능</td><td>선택</td></tr>
+  <tr><td>대회 정보 (채점 방식: 스트로크/뉴 페리아/더블 페리아)</td><td>대회 생성 시</td><td>대회 관리, 채점</td><td>기능 이용 시 필수</td></tr>
 </table>
 
 <h3>1.2 자동 수집 정보</h3>
@@ -498,7 +513,7 @@
 <p>GPS 위치, 연락처, 광고 식별자(IDFA/GAID), 건강 데이터, 금융 정보</p>
 
 <h2>2. ROUNDIE Score</h2>
-<p>PLAY(플레이 품질), VIBE(커뮤니티 참여도), STYLE(경험 다양성)의 3축 독자 지표입니다. 실제 스코어 숫자는 기본적으로 팔로워에게만 표시됩니다. 공개 범위는 이용자가 선택할 수 있습니다.</p>
+<p>SKILL(스코어 실력), VIBE(골프 열정), STYLE(골프 라이프), SCORE(스코어 평균)의 4축 독자 지표입니다. 실제 스코어 숫자는 기본적으로 팔로워에게만 표시됩니다. 공개 범위는 이용자가 선택할 수 있습니다.</p>
 
 <h2>3. 개인정보 설정</h2>
 <table>
