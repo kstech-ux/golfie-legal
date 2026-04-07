@@ -61,6 +61,20 @@
     .nav-r a.active{color:var(--primary);background:var(--primary-light)}
     .nav-r a:hover{color:var(--primary)}
 
+    /* Hamburger */
+    .hamburger{display:none;width:44px;height:44px;border:none;background:none;cursor:pointer;padding:10px;flex-shrink:0}
+    .hamburger span{display:block;width:20px;height:2px;background:var(--text-muted);margin:4px auto;transition:all .3s;border-radius:1px}
+    .hamburger.open span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
+    .hamburger.open span:nth-child(2){opacity:0}
+    .hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
+    @media(max-width:768px){.hamburger{display:flex;align-items:center;justify-content:center}}
+
+    /* Mobile menu overlay */
+    .mob-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.95);z-index:99;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;opacity:0;pointer-events:none;transition:opacity .3s}
+    .mob-overlay.open{opacity:1;pointer-events:auto}
+    .mob-overlay a{font-size:16px;font-weight:600;color:var(--text-muted);text-decoration:none;padding:14px 32px;border-radius:10px;transition:all .2s;letter-spacing:2px;min-height:44px;display:flex;align-items:center}
+    .mob-overlay a:hover,.mob-overlay a:active{color:var(--primary);background:var(--primary-light)}
+
     /* ===== SHARED ===== */
     section{padding:100px 24px;position:relative}
     .si{max-width:840px;margin:0 auto}
@@ -389,8 +403,19 @@
     <a href="#" class="active" onclick="sl('ja');return false">JP</a>
     <a href="#" onclick="sl('en');return false">EN</a>
     <a href="#" onclick="sl('ko');return false">KR</a>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
+
+<div class="mob-overlay" id="mobMenu">
+  <a href="#grid" onclick="closeMenu()">Color Grid</a>
+  <a href="#privacy" onclick="closeMenu()">Privacy</a>
+  <a href="#social" onclick="closeMenu()">Social</a>
+  <a href="#compe" onclick="closeMenu()">Competition</a>
+  <a href="#score" onclick="closeMenu()">ROUNDIE Score</a>
+  <a href="#faq" onclick="closeMenu()">FAQ</a>
+  <a href="#pricing" onclick="closeMenu()">Pricing</a>
+</div>
 
 <!-- 1. HERO -->
 <div class="hero">
@@ -439,7 +464,7 @@
 </div>
 
 <!-- 2. GRID -->
-<section class="grid-s">
+<section id="grid" class="grid-s">
   <div class="si fu">
     <div class="sl">Color Grid</div>
     <div class="ge">
@@ -476,7 +501,7 @@
 </section>
 
 <!-- 3. PRIVACY -->
-<section>
+<section id="privacy">
   <div class="si fu">
     <div class="sl">Privacy First</div>
     <div class="st">
@@ -506,7 +531,7 @@
 </section>
 
 <!-- 4. SOCIAL -->
-<section class="soc-s">
+<section id="social" class="soc-s">
   <div class="si fu">
     <div class="sl">Social</div>
     <div class="st">
@@ -646,7 +671,7 @@
 </div>
 
 <!-- 5. COMPE -->
-<section>
+<section id="compe">
   <div class="si fu">
     <div class="sl">Competition</div>
     <div class="st">
@@ -678,7 +703,7 @@
 </section>
 
 <!-- 6. ROUNDIE SCORE -->
-<section class="gs-s">
+<section id="score" class="gs-s">
   <div class="si fu">
     <div class="sl">ROUNDIE Score</div>
     <div class="st">
@@ -707,7 +732,7 @@
 </section>
 
 <!-- 7. FAQ -->
-<section>
+<section id="faq">
   <div class="si fu faq-wrap">
     <div class="sl">FAQ</div>
     <div class="faq-list">
@@ -721,7 +746,7 @@
 </section>
 
 <!-- 8. PRICING -->
-<section>
+<section id="pricing">
   <div class="si fu">
     <div class="sl">
       <span class="ilj a">料金プラン</span><span class="ile">Pricing</span><span class="ilk">요금제</span>
@@ -854,6 +879,8 @@ const dg=document.getElementById('dG');
 new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){dg.classList.add('an');dg.querySelectorAll('.gc').forEach((c,i)=>{c.style.transitionDelay=(i*50)+'ms'})}})},{threshold:.3}).observe(dg);
 function tF(b){const i=b.parentElement;const o=i.classList.contains('open');document.querySelectorAll('.faq-i').forEach(x=>x.classList.remove('open'));if(!o)i.classList.add('open')}
 function tSc(el){const wasActive=el.classList.contains('active');document.querySelectorAll('.sc').forEach(x=>x.classList.remove('active'));if(!wasActive)el.classList.add('active')}
+function toggleMenu(){document.querySelector('.hamburger').classList.toggle('open');document.getElementById('mobMenu').classList.toggle('open');document.body.style.overflow=document.getElementById('mobMenu').classList.contains('open')?'hidden':''}
+function closeMenu(){document.querySelector('.hamburger').classList.remove('open');document.getElementById('mobMenu').classList.remove('open');document.body.style.overflow=''}
 function sl(l){['ja','en','ko'].forEach(x=>{const s=x==='ja'?'lj':x==='en'?'le':'lk';const si=x==='ja'?'ilj':x==='en'?'ile':'ilk';document.querySelectorAll(`.${s},.${si}`).forEach(e=>{e.classList.toggle('a',x===l)})});document.querySelectorAll('.nav-r a').forEach(a=>a.classList.remove('active'));event.target.classList.add('active');document.documentElement.lang=l}
 </script>
 </body>
