@@ -61,9 +61,12 @@
     .nav-r a.active{color:var(--primary);background:var(--primary-light)}
     .nav-r a:hover{color:var(--primary)}
 
-    /* Hamburger */
-    .hamburger{display:none;width:44px;height:44px;border:none;background:none;cursor:pointer;padding:10px;flex-shrink:0}
-    .hamburger span{display:block;width:20px;height:2px;background:var(--text-muted);margin:4px auto;transition:all .3s;border-radius:1px}
+    /* Floating hamburger */
+    .hamburger{display:none;position:fixed;bottom:24px;right:24px;z-index:101;width:52px;height:52px;border:none;border-radius:50%;background:var(--primary-light);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);cursor:pointer;padding:0;box-shadow:0 4px 20px rgba(0,0,0,.4);transition:all .3s}
+    .hamburger:active{transform:scale(.92)}
+    .hamburger span{display:block;width:20px;height:2px;background:var(--primary);margin:4px auto;transition:all .3s;border-radius:1px}
+    .hamburger.open{background:var(--primary)}
+    .hamburger.open span{background:#fff}
     .hamburger.open span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
     .hamburger.open span:nth-child(2){opacity:0}
     .hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
@@ -403,9 +406,10 @@
     <a href="#" class="active" onclick="sl('ja');return false">JP</a>
     <a href="#" onclick="sl('en');return false">EN</a>
     <a href="#" onclick="sl('ko');return false">KR</a>
-    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
+
+<button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
 
 <div class="mob-overlay" id="mobMenu">
   <a href="#grid" onclick="closeMenu()">Color Grid</a>
